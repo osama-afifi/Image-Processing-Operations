@@ -126,11 +126,11 @@ namespace ImageOperationsPackage
                       {
                           int X1 = (int)Math.Floor(inversePixelMap[col, row].X);
                           X1 = Math.Max(0, X1);
-                          int X2 = X1 + ((X1 + 1 == oldWidth) ?  0 : 1);
+                          int X2 = X1 + 1;
                           X2 = Math.Min(X2, oldWidth - 1);
                           int Y1 = (int)Math.Floor(inversePixelMap[col, row].Y);
                           Y1 = Math.Max(0, Y1);
-                          int Y2 = Y1 + ((Y1 + 1 == oldHeight) ? 0 : 1);
+                          int Y2 = Y1 + 1;
                           Y2 = Math.Min(Y2, oldHeight - 1);
 
                           System.Drawing.Color P1 = oldFastImage.GetPixel(X1, Y1);
@@ -141,24 +141,25 @@ namespace ImageOperationsPackage
                           float Xfraction = inversePixelMap[col, row].X - (float)X1;
                           float Yfraction = inversePixelMap[col, row].Y - (float)Y1;
 
-                          float Z1R = (float)P1.R * (1f - Xfraction) + P2.R * Xfraction;
-                          float Z1G = (float)P1.G * (1f - Xfraction) + P2.G * Xfraction;
-                          float Z1B = (float)P1.B * (1f - Xfraction) + P2.B * Xfraction;
+                          float Z1R = (float)P1.R * (1f - Xfraction) + (float)P2.R * Xfraction;
+                          float Z1G = (float)P1.G * (1f - Xfraction) + (float)P2.G * Xfraction;
+                          float Z1B = (float)P1.B * (1f - Xfraction) + (float)P2.B * Xfraction;
 
-                          float Z2R = (float)P3.R * (1f - Xfraction) + P4.R * Xfraction;
-                          float Z2G = (float)P3.G * (1f - Xfraction) + P4.G * Xfraction;
-                          float Z2B = (float)P3.B * (1f - Xfraction) + P4.B * Xfraction;
+                          float Z2R = (float)P3.R * (1f - Xfraction) + (float)P4.R * Xfraction;
+                          float Z2G = (float)P3.G * (1f - Xfraction) + (float)P4.G * Xfraction;
+                          float Z2B = (float)P3.B * (1f - Xfraction) + (float)P4.B * Xfraction;
 
 
                           int R = (int)(Z1R * (1f - Yfraction) + Z2R * Yfraction);
                           int G = (int)(Z1G * (1f - Yfraction) + Z2G * Yfraction);
                           int B = (int)(Z1B * (1f - Yfraction) + Z2B * Yfraction);
-
-                          newFastImage.SetPixel(col, row, System.Drawing.Color.FromArgb(R, G, B));
+                          newFastImage.Img.SetPixel(col, row, System.Drawing.Color.FromArgb(R, G, B));
+                         // newFastImage.SetPixel(col, row, System.Drawing.Color.FromArgb(R, G, B));
                       }
                       else
                       {
-                          newFastImage.SetPixel(col, row, System.Drawing.Color.FromArgb(0, 0, 0));
+                          newFastImage.Img.SetPixel(col, row, System.Drawing.Color.FromArgb(255, 255, 255));
+                          //newFastImage.SetPixel(col, row, System.Drawing.Color.FromArgb(255, 255, 255));
                       }
                   }
         }
@@ -182,7 +183,7 @@ namespace ImageOperationsPackage
             inverseMapping();
             interpolate();
 
-            return newFastImage.getBitmap();
+            return newFastImage.Img;//.getBitmap();
         }
 
         public void refreshMatrix()

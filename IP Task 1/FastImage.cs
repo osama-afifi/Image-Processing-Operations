@@ -14,7 +14,7 @@ namespace ImageOperationsPackage
     // An unsafe access image
     class FastImage
     {
-        private Bitmap Img;
+        public Bitmap Img;
         public int Depth { get; private set; }
         public int Width { get; private set; }
         public int Height { get; private set; }
@@ -26,11 +26,10 @@ namespace ImageOperationsPackage
         public FastImage(Bitmap Img)
         {
             this.Img = Img;
-            Width = Img.Width;
-            Height = Img.Height;
-            this.Depth = Image.GetPixelFormatSize(Img.PixelFormat);
+            Width = this.Img.Width;
+            Height = this.Img.Height;
+            this.Depth = Image.GetPixelFormatSize(this.Img.PixelFormat);
             LockImgBits(this.Img);  
-    
         }
 
         private bool LockImgBits(Bitmap Image) 
