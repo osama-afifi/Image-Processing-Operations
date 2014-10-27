@@ -67,6 +67,7 @@ namespace ImageOperationsPackage
         }
         void setRotation(float rotation)
         {
+            rotation = rotation % 360;
             this.rotation = rotation;
         }
 
@@ -93,8 +94,11 @@ namespace ImageOperationsPackage
 			for(int row = 0 ; row < oldHeight ; row++)
 				for(int col = 0 ; col< oldWidth ; col++)
                 {
-                    forwardPixelMap[col, row] = new PointF(col, row);
-                    transMatrix.TransformPoints(new[] { forwardPixelMap[col, row] });
+                    PointF []temp;
+                    temp = new PointF[1];
+                    temp[0] = new PointF((float)col, (float)row);
+                    transMatrix.TransformPoints(temp);
+                    forwardPixelMap[col, row] = temp[0];
                 }
         }
 
@@ -104,8 +108,11 @@ namespace ImageOperationsPackage
             for (int row = 0; row < newHeight; row++)
                 for (int col = 0; col < newWidth; col++)
                 {
-                    inversePixelMap[col, row] = new PointF(col, row);
-                    transMatrix.TransformPoints(new[] { inversePixelMap[col, row] });
+                    PointF[] temp;
+                    temp = new PointF[1];
+                    temp[0] = new PointF((float)col, (float)row);
+                    transMatrix.TransformPoints(temp);
+                    inversePixelMap[col, row] = temp[0];
                 }
         }
 
@@ -181,7 +188,7 @@ namespace ImageOperationsPackage
         public void refreshMatrix()
         {
             transMatrix = new Matrix();
-            transMatrix.Scale(scale_x, scale_y, MatrixOrder.Append);
+            transMatrix.Scale(scale_x, scale_y);
             transMatrix.Rotate(rotation, MatrixOrder.Append);
             transMatrix.Shear(shear_x, shear_y, MatrixOrder.Append);
 
