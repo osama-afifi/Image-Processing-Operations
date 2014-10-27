@@ -16,3 +16,6 @@ D:\Osama\Study\College\4th Year\Image Processing\Lab\1\IP Task 1\IP Task 1\obj\D
 D:\Osama\Study\College\4th Year\Image Processing\Lab\1\IP Task 1\IP Task 1\obj\Debug\IP Task 1.pdb
 D:\Osama\Study\College\4th Year\Image Processing\Lab\1\IP Task 1\IP Task 1\obj\Debug\IP_Task_1.GUI.resources
 D:\Osama\Study\College\4th Year\Image Processing\Lab\1\IP Task 1\IP Task 1\obj\Debug\IP Task 1.csprojResolveAssemblyReference.cache
+D:\Osama\Programming\Projects\Image-Processing-Operations\IP Task 1\bin\Debug\IP Task 1.exe.config
+D:\Osama\Programming\Projects\Image-Processing-Operations\IP Task 1\obj\Debug\IP Task 1.exe
+D:\Osama\Programming\Projects\Image-Processing-Operations\IP Task 1\obj\Debug\IP Task 1.pdb

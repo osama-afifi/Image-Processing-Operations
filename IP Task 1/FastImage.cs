@@ -26,7 +26,11 @@ namespace ImageOperationsPackage
         public FastImage(Bitmap Img)
         {
             this.Img = Img;
-            LockImgBits(this.Img);      
+            Width = Img.Width;
+            Height = Img.Height;
+            this.Depth = Image.GetPixelFormatSize(Img.PixelFormat);
+            LockImgBits(this.Img);  
+    
         }
 
         private bool LockImgBits(Bitmap Image) 
@@ -115,6 +119,10 @@ namespace ImageOperationsPackage
         }
         public Bitmap getBitmap()
         {
+            BitmapData bmData = Img.LockBits(new Rectangle(0, 0, Img.Width, Img.Height),
+            ImageLockMode.ReadWrite, Img.PixelFormat);
+            Marshal.Copy(Pixels, 0, bmData.Scan0, Width * Height * (Depth / 8));
+            Img.UnlockBits(bmData);
             return Img;
         }
           

@@ -5,19 +5,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing.Drawing2D;
 using System.Drawing;
+//using System.Windows.Media;
 using IP_Task_1;
 
 namespace ImageOperationsPackage
 {
     class ImageTransform
     {
+        //MatrixTransform transMatrix;
 		private Matrix transMatrix;
         private FastImage oldFastImage;
         private FastImage newFastImage;
         private Bitmap oldBitmap;
         private Bitmap newBitmap;
-        private PointF[,] newPixelMap;
-        private PointF[,] reversePixelMap;
+        private PointF[,] forwardPixelMap;
+        private PointF[,] inversePixelMap;
 		private float minX;
         private float minY;
         private float maxX;
@@ -34,25 +36,22 @@ namespace ImageOperationsPackage
 
 		public ImageTransform()
 		{
-            transMatrix = new Matrix();
             scale_x = 1.0f;
             scale_y = 1.0f;
             rotation = 0.0f;
             shear_x = 0.0f;
             shear_y = 0.0f;
+            refreshMatrix();
 		}
 
         public ImageTransform(float[] transParam)
 		{
-            transMatrix = new Matrix();
 			scale_x = transParam[0];
             scale_y = transParam[1];
             rotation = transParam[2];
             shear_x = transParam[3];
             shear_y = transParam[4];
-            transMatrix.Scale(scale_x, scale_y);
-            transMatrix.Rotate(rotation, MatrixOrder.Append);
-            transMatrix.Shear(shear_x, shear_y, MatrixOrder.Append);
+            refreshMatrix();
 		}
 
         void setShear(float shear_x, float shear_y)
@@ -71,84 +70,69 @@ namespace ImageOperationsPackage
             this.rotation = rotation;
         }
 
-
-		private void getBoundary(int n, int m)
+		private void getBoundary(int height, int width)
 		{
             PointF []p = new PointF[4];
             p[0] = new PointF(0, 0);
-            p[1] = new PointF(n, 0);
-            p[2] = new PointF(0, m);
-            p[3] = new PointF(n, m);
+            p[1] = new PointF(width, 0);
+            p[2] = new PointF(0, height);
+            p[3] = new PointF(width, height);
             transMatrix.TransformPoints(p);
             minX = Math.Min(Math.Min(p[0].X, p[1].X), Math.Min(p[2].X, p[3].X));
             minY = Math.Min(Math.Min(p[0].Y, p[1].Y), Math.Min(p[2].Y, p[3].Y));
             maxX = Math.Max(Math.Max(p[0].X, p[1].X), Math.Max(p[2].X, p[3].X));
             maxY = Math.Max(Math.Max(p[0].Y, p[1].Y), Math.Max(p[2].Y, p[3].Y));
             newHeight = (int)Math.Ceiling(maxY - minY);
-            newWidth = (int)Math.Ceiling(maxY - minX);
-            transMatrix.Translate(-minX, -minY);
+            newWidth = (int)Math.Ceiling(maxX - minX);
+            transMatrix.Translate(-minX, -minY, MatrixOrder.Append);
 		}
 
-		private Color interpolate(Point p)
+        private  void forwardMapping()
         {
-
-            return new Color();
-        }
-
-        public Bitmap GeometricLinearTransform(Bitmap oldBitmap)
-        {
-			oldWidth = oldBitmap.Width;
-            oldHeight = oldBitmap.Height;
-			this.oldBitmap = oldBitmap;
-            getBoundary(oldHeight, oldWidth);
-            oldFastImage = new FastImage(oldBitmap);
-
-			//build new buffer
-            newBitmap = new Bitmap(newWidth, newHeight);
-            newFastImage = new FastImage(newBitmap);  
-            newPixelMap = new PointF[oldHeight, oldWidth];
-			reversePixelMap = new PointF[newHeight, newWidth];
-
-			// map from original to new image 
+        			// map from original to new image 
 			for(int row = 0 ; row < oldHeight ; row++)
 				for(int col = 0 ; col< oldWidth ; col++)
                 {
-                    newPixelMap[row, col] = new PointF(col, row);
-					transMatrix.TransformPoints(new[]{newPixelMap[row,col]});
+                    forwardPixelMap[col, row] = new PointF(col, row);
+                    transMatrix.TransformPoints(new[] { forwardPixelMap[col, row] });
                 }
+        }
 
-            Matrix invMatrix = transMatrix;
-            invMatrix.Invert();
-
-			// map from new image back to original
+        private void inverseMapping()
+        {
+            // map from new image back to original
             for (int row = 0; row < newHeight; row++)
                 for (int col = 0; col < newWidth; col++)
                 {
-                    reversePixelMap[row, col] = new PointF(col, row);
-                    invMatrix.TransformPoints(new[] { reversePixelMap[row, col] });
+                    inversePixelMap[col, row] = new PointF(col, row);
+                    transMatrix.TransformPoints(new[] { inversePixelMap[col, row] });
                 }
+        }
 
-			// interpolate
+        private void interpolate()
+        {
+        			// interpolate
 			  for (int row = 0; row < newHeight; row++)
                   for (int col = 0; col < newWidth; col++)
                   {
-                      if (reversePixelMap[row, col].X >= 0 && reversePixelMap[row, col].X < oldWidth && reversePixelMap[row, col].Y >= 0 && reversePixelMap[row, col].Y < oldHeight)
+                      if (inversePixelMap[col, row].X >= 0 && inversePixelMap[col, row].X < oldWidth && inversePixelMap[col, row].Y >= 0 && inversePixelMap[col, row].Y < oldHeight)
                       {
-                          int X1 = (int)Math.Floor(reversePixelMap[row, col].X);
-                          int X2 = X1 + 1;
-                          int Y1 = (int)Math.Floor(reversePixelMap[row, col].Y);
-                          int Y2 = Y1 + 1;
+                          int X1 = (int)Math.Floor(inversePixelMap[col, row].X);
+                          X1 = Math.Max(0, X1);
+                          int X2 = X1 + ((X1 + 1 == oldWidth) ?  0 : 1);
+                          X2 = Math.Min(X2, oldWidth - 1);
+                          int Y1 = (int)Math.Floor(inversePixelMap[col, row].Y);
+                          Y1 = Math.Max(0, Y1);
+                          int Y2 = Y1 + ((Y1 + 1 == oldHeight) ? 0 : 1);
+                          Y2 = Math.Min(Y2, oldHeight - 1);
 
-                          Color P1 = oldFastImage.GetPixel(X1, Y1);
-                          Color P2 = oldFastImage.GetPixel(X2, Y1);
-                          Color P3 = oldFastImage.GetPixel(X1, Y2);
-                          Color P4 = oldFastImage.GetPixel(X2, Y2);
+                          System.Drawing.Color P1 = oldFastImage.GetPixel(X1, Y1);
+                          System.Drawing.Color P2 = oldFastImage.GetPixel(X2, Y1);
+                          System.Drawing.Color P3 = oldFastImage.GetPixel(X1, Y2);
+                          System.Drawing.Color P4 = oldFastImage.GetPixel(X2, Y2);
 
-                          float Xfraction = reversePixelMap[row, col].X - (float)X1;
-                          float Yfraction = reversePixelMap[row, col].Y - (float)Y1;
-
-                          //Z1 = P1 × (1 – Xfraction) + P2 × Xfraction
-                          //Z2 = P3 × (1 – Xfraction) + P4 × Xfraction
+                          float Xfraction = inversePixelMap[col, row].X - (float)X1;
+                          float Yfraction = inversePixelMap[col, row].Y - (float)Y1;
 
                           float Z1R = (float)P1.R * (1f - Xfraction) + P2.R * Xfraction;
                           float Z1G = (float)P1.G * (1f - Xfraction) + P2.G * Xfraction;
@@ -163,15 +147,44 @@ namespace ImageOperationsPackage
                           int G = (int)(Z1G * (1f - Yfraction) + Z2G * Yfraction);
                           int B = (int)(Z1B * (1f - Yfraction) + Z2B * Yfraction);
 
-						  newFastImage.SetPixel(col, row, Color.FromArgb(R, G, B));
+                          newFastImage.SetPixel(col, row, System.Drawing.Color.FromArgb(R, G, B));
                       }
                       else
                       {
-                          newFastImage.SetPixel(col, row, Color.FromArgb(0,0,0));
+                          newFastImage.SetPixel(col, row, System.Drawing.Color.FromArgb(0, 0, 0));
                       }
                   }
-              return newFastImage.getBitmap();
         }
 
+        public Bitmap GeometricLinearTransform(Bitmap oldBitmap)
+        {
+			oldWidth = oldBitmap.Width;
+            oldHeight = oldBitmap.Height;
+			this.oldBitmap = oldBitmap;
+            getBoundary(oldHeight, oldWidth);
+            oldFastImage = new FastImage(oldBitmap);
+
+			//Build new Image
+            newBitmap = new Bitmap(newWidth, newHeight, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+            newFastImage = new FastImage(newBitmap);
+            forwardPixelMap = new PointF[oldWidth, oldHeight];
+            inversePixelMap = new PointF[newWidth, newHeight];
+
+            forwardMapping();
+            transMatrix.Invert();
+            inverseMapping();
+            interpolate();
+
+            return newFastImage.getBitmap();
+        }
+
+        public void refreshMatrix()
+        {
+            transMatrix = new Matrix();
+            transMatrix.Scale(scale_x, scale_y, MatrixOrder.Append);
+            transMatrix.Rotate(rotation, MatrixOrder.Append);
+            transMatrix.Shear(shear_x, shear_y, MatrixOrder.Append);
+
+        }
     }
 }

@@ -42,12 +42,12 @@
             this.RotateTB = new System.Windows.Forms.TextBox();
             this.ScaleXTB = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.filePath = new System.Windows.Forms.TextBox();
+            this.BrowseButton = new System.Windows.Forms.Button();
             this.BeforeBox = new System.Windows.Forms.PictureBox();
             this.AfterBox = new System.Windows.Forms.PictureBox();
             this.Before = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.BrowseButton = new System.Windows.Forms.Button();
-            this.filePath = new System.Windows.Forms.TextBox();
             this.TabMenu.SuspendLayout();
             this.tab2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -195,6 +195,23 @@
             this.tabPage1.Text = "Open";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // filePath
+            // 
+            this.filePath.Location = new System.Drawing.Point(7, 54);
+            this.filePath.Name = "filePath";
+            this.filePath.Size = new System.Drawing.Size(215, 20);
+            this.filePath.TabIndex = 6;
+            // 
+            // BrowseButton
+            // 
+            this.BrowseButton.Location = new System.Drawing.Point(7, 80);
+            this.BrowseButton.Name = "BrowseButton";
+            this.BrowseButton.Size = new System.Drawing.Size(81, 32);
+            this.BrowseButton.TabIndex = 5;
+            this.BrowseButton.Text = "Browse";
+            this.BrowseButton.UseVisualStyleBackColor = true;
+            this.BrowseButton.Click += new System.EventHandler(this.BrowseButton_Click);
+            // 
             // BeforeBox
             // 
             this.BeforeBox.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -235,33 +252,16 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "After";
             // 
-            // BrowseButton
-            // 
-            this.BrowseButton.Location = new System.Drawing.Point(7, 80);
-            this.BrowseButton.Name = "BrowseButton";
-            this.BrowseButton.Size = new System.Drawing.Size(81, 32);
-            this.BrowseButton.TabIndex = 5;
-            this.BrowseButton.Text = "Browse";
-            this.BrowseButton.UseVisualStyleBackColor = true;
-            this.BrowseButton.Click += new System.EventHandler(this.BrowseButton_Click);
-            // 
-            // filePath
-            // 
-            this.filePath.Location = new System.Drawing.Point(7, 54);
-            this.filePath.Name = "filePath";
-            this.filePath.Size = new System.Drawing.Size(215, 20);
-            this.filePath.TabIndex = 6;
-            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1335, 711);
+            this.Controls.Add(this.BeforeBox);
+            this.Controls.Add(this.AfterBox);
             this.Controls.Add(this.TabMenu);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.Before);
-            this.Controls.Add(this.AfterBox);
-            this.Controls.Add(this.BeforeBox);
             this.Name = "GUI";
             this.Text = "IP Task 1";
             this.TabMenu.ResumeLayout(false);
