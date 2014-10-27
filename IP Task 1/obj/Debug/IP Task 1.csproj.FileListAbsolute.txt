@@ -1,0 +1,18 @@
+D:\CS\Projects\IP Task 1\IP Task 1\bin\Debug\IP Task 1.exe.config
+D:\CS\Projects\IP Task 1\IP Task 1\bin\Debug\IP Task 1.exe
+D:\CS\Projects\IP Task 1\IP Task 1\bin\Debug\IP Task 1.pdb
+D:\CS\Projects\IP Task 1\IP Task 1\obj\Debug\IP Task 1.csprojResolveAssemblyReference.cache
+D:\CS\Projects\IP Task 1\IP Task 1\obj\Debug\IP_Task_1.Form1.resources
+D:\CS\Projects\IP Task 1\IP Task 1\obj\Debug\IP_Task_1.Properties.Resources.resources
+D:\CS\Projects\IP Task 1\IP Task 1\obj\Debug\IP Task 1.csproj.GenerateResource.Cache
+D:\CS\Projects\IP Task 1\IP Task 1\obj\Debug\IP Task 1.exe
+D:\CS\Projects\IP Task 1\IP Task 1\obj\Debug\IP Task 1.pdb
+D:\Osama\Study\College\4th Year\Image Processing\Lab\1\IP Task 1\IP Task 1\obj\Debug\IP_Task_1.Properties.Resources.resources
+D:\Osama\Study\College\4th Year\Image Processing\Lab\1\IP Task 1\IP Task 1\obj\Debug\IP Task 1.csproj.GenerateResource.Cache
+D:\Osama\Study\College\4th Year\Image Processing\Lab\1\IP Task 1\IP Task 1\bin\Debug\IP Task 1.exe.config
+D:\Osama\Study\College\4th Year\Image Processing\Lab\1\IP Task 1\IP Task 1\bin\Debug\IP Task 1.exe
+D:\Osama\Study\College\4th Year\Image Processing\Lab\1\IP Task 1\IP Task 1\bin\Debug\IP Task 1.pdb
+D:\Osama\Study\College\4th Year\Image Processing\Lab\1\IP Task 1\IP Task 1\obj\Debug\IP Task 1.exe
+D:\Osama\Study\College\4th Year\Image Processing\Lab\1\IP Task 1\IP Task 1\obj\Debug\IP Task 1.pdb
+D:\Osama\Study\College\4th Year\Image Processing\Lab\1\IP Task 1\IP Task 1\obj\Debug\IP_Task_1.GUI.resources
+D:\Osama\Study\College\4th Year\Image Processing\Lab\1\IP Task 1\IP Task 1\obj\Debug\IP Task 1.csprojResolveAssemblyReference.cache
