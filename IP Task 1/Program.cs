@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IP_Task_1
+namespace IP_GUI
 {
     static class Program
     {

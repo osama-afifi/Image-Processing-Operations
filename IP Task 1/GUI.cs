@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ImageOperationsPackage;
 
-namespace IP_Task_1
+namespace IP_GUI
 {
     public partial class GUI : Form
     {
@@ -19,16 +19,6 @@ namespace IP_Task_1
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-        }
-
-        private void tab2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RotateTB_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void ApplyButton_Click(object sender, EventArgs e)

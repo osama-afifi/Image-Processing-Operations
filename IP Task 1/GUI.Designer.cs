@@ -1,4 +1,4 @@
-﻿namespace IP_Task_1
+﻿namespace IP_GUI
 {
     partial class GUI
     {
@@ -85,7 +85,6 @@
             this.tab2.TabIndex = 1;
             this.tab2.Text = "Transformations";
             this.tab2.UseVisualStyleBackColor = true;
-            this.tab2.Click += new System.EventHandler(this.tab2_Click);
             // 
             // label5
             // 
@@ -173,8 +172,6 @@
             this.RotateTB.Size = new System.Drawing.Size(100, 20);
             this.RotateTB.TabIndex = 1;
             this.RotateTB.Text = "0.0";
-            this.RotateTB.TextChanged += new System.EventHandler(this.RotateTB_TextChanged);
-            // 
             // ScaleXTB
             // 
             this.ScaleXTB.Location = new System.Drawing.Point(9, 28);
