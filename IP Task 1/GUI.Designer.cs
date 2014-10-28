@@ -172,6 +172,7 @@
             this.RotateTB.Size = new System.Drawing.Size(100, 20);
             this.RotateTB.TabIndex = 1;
             this.RotateTB.Text = "0.0";
+            // 
             // ScaleXTB
             // 
             this.ScaleXTB.Location = new System.Drawing.Point(9, 28);
@@ -216,6 +217,7 @@
             this.BeforeBox.Location = new System.Drawing.Point(270, 112);
             this.BeforeBox.Name = "BeforeBox";
             this.BeforeBox.Size = new System.Drawing.Size(530, 414);
+            this.BeforeBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BeforeBox.TabIndex = 1;
             this.BeforeBox.TabStop = false;
             // 
@@ -226,6 +228,7 @@
             this.AfterBox.Location = new System.Drawing.Point(806, 112);
             this.AfterBox.Name = "AfterBox";
             this.AfterBox.Size = new System.Drawing.Size(530, 414);
+            this.AfterBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.AfterBox.TabIndex = 2;
             this.AfterBox.TabStop = false;
             // 
