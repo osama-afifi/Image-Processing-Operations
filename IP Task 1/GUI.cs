@@ -31,14 +31,14 @@ namespace IP_GUI
             transParam[3] = float.Parse(ShearXTB.Text);
             transParam[4] = float.Parse(ShearYTB.Text);
             ImageTransform IT = new ImageTransform(transParam);
-          //  try
+            try
             {
                 Bitmap B =  IT.GeometricLinearTransform(sourceBitmap);
                 AfterBox.Image = B;
             }
-         //   catch
+            catch
             {
-         //       MessageBox.Show("Image can't be Transformed !", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Image can't be Transformed !", "Error", MessageBoxButtons.OK);
             }
         }
 
