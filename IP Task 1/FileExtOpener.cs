@@ -53,9 +53,27 @@ namespace ImageOperationsPackage
                 string[] str = photo.Substring(index).Split(new char[] { ' ', '\n' },
                     StringSplitOptions.RemoveEmptyEntries); 
                 Pixels = new byte[str.Length];
-                int i = 0;
-                foreach (String text in str)
-                { Pixels[i++] = byte.Parse(text); }
+                //Img = new Bitmap(Width, Height, PixelFormat.Format24bppRgb);
+                //int idx = 0;
+                //for (int i = 0; i < Width; i++)
+                //    for (int j = 0; j < Height; j++)
+                //    {
+                //        int R=-1,G=-1,B=-1;
+                //        for (int k = 0; k < 3; k++) 
+                //            {
+
+                //                if (k == 0)
+                //                    R = byte.Parse(str[idx++]);
+                //                else if (k == 1)
+                //                    G = byte.Parse(str[idx++]);
+                //                else if (k == 2)
+                //                    B = byte.Parse(str[idx++]);
+                //            }
+                //        Img.SetPixel(i, j, Color.FromArgb(R, G, B));
+                //    }
+                int idx=0;
+                foreach (string text in str)
+                    Pixels[idx++] = byte.Parse(text);
                 BitmapData bmData = Img.LockBits(new Rectangle(0, 0, Img.Width, Img.Height),
                      ImageLockMode.ReadWrite, Img.PixelFormat);
                 Marshal.Copy(Pixels, 0, bmData.Scan0, Width * Height * (Depth / 8));

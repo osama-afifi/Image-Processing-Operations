@@ -31,15 +31,15 @@ namespace IP_GUI
             transParam[3] = float.Parse(ShearXTB.Text);
             transParam[4] = float.Parse(ShearYTB.Text);
             ImageTransform IT = new ImageTransform(transParam);
-            try
+           // try
             {
                 Bitmap B =  IT.GeometricLinearTransform(sourceBitmap);
                 AfterBox.Image = B;
             }
-            catch
-            {
-                MessageBox.Show("Image can't be Transformed !", "Error", MessageBoxButtons.OK);
-            }
+          //  catch
+         //   {
+        //        MessageBox.Show("Image can't be Transformed !", "Error", MessageBoxButtons.OK);
+       //     }
         }
 
         private void BrowseButton_Click(object sender, EventArgs e)
@@ -54,13 +54,13 @@ namespace IP_GUI
                 sourceBitmap = null;
                 //Open the browsed image and display it
                 string OpenedFilePath = openFileDialog1.FileName;
-                if (OpenedFilePath.Split('.')[1] != "ppm")
+                if (OpenedFilePath.Split('.')[1] != "ppm" && OpenedFilePath.Split('.')[1] != "PPM")
                     sourceBitmap = FileExtOpener.OpenCommonImg(OpenedFilePath);
                 else
                     sourceBitmap = FileExtOpener.OpenPPM(OpenedFilePath);
-                if (sourceBitmap == null)
-                    MessageBox.Show("Image can't be opened !", "Error", MessageBoxButtons.OK);
-                else
+             //   if (sourceBitmap == null)
+            //        MessageBox.Show("Image can't be opened !", "Error", MessageBoxButtons.OK);
+             //   else
                 {
                     filePath.Text = OpenedFilePath;
                     BeforeBox.Image = sourceBitmap;

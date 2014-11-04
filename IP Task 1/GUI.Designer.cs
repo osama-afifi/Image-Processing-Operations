@@ -48,6 +48,7 @@
             this.AfterBox = new System.Windows.Forms.PictureBox();
             this.Before = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.TabMenu.SuspendLayout();
             this.tab2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -59,6 +60,7 @@
             // 
             this.TabMenu.Controls.Add(this.tab2);
             this.TabMenu.Controls.Add(this.tabPage1);
+            this.TabMenu.Controls.Add(this.tabPage2);
             this.TabMenu.Location = new System.Drawing.Point(12, 12);
             this.TabMenu.Name = "TabMenu";
             this.TabMenu.SelectedIndex = 0;
@@ -134,9 +136,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(158, 13);
+            this.label2.Size = new System.Drawing.Size(149, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Rotation (Degrees/Anticlockise)";
+            this.label2.Text = "Rotation (Degrees/Clockwise)";
             // 
             // label1
             // 
@@ -217,7 +219,7 @@
             this.BeforeBox.Location = new System.Drawing.Point(270, 112);
             this.BeforeBox.Name = "BeforeBox";
             this.BeforeBox.Size = new System.Drawing.Size(530, 414);
-            this.BeforeBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BeforeBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.BeforeBox.TabIndex = 1;
             this.BeforeBox.TabStop = false;
             // 
@@ -228,7 +230,7 @@
             this.AfterBox.Location = new System.Drawing.Point(806, 112);
             this.AfterBox.Name = "AfterBox";
             this.AfterBox.Size = new System.Drawing.Size(530, 414);
-            this.AfterBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.AfterBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.AfterBox.TabIndex = 2;
             this.AfterBox.TabStop = false;
             // 
@@ -251,6 +253,16 @@
             this.label6.Size = new System.Drawing.Size(72, 31);
             this.label6.TabIndex = 4;
             this.label6.Text = "After";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(228, 659);
+            this.tabPage2.TabIndex = 3;
+            this.tabPage2.Text = "Histogram Ops.";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // GUI
             // 
@@ -298,6 +310,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TextBox filePath;
         private System.Windows.Forms.Button BrowseButton;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }
 
