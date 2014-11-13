@@ -186,5 +186,60 @@ namespace IP_GUI
         {
             TargetBox.Text = browse();
         }
+
+        private void FilterApplyButton_Click(object sender, EventArgs e)
+        {
+            Bitmap B;
+            if (sourceBitmap == null) return;
+            B = new Bitmap(sourceBitmap);
+            ImageFilter imageFilter = new ImageFilter(B);
+
+            if (meanRadio.Checked)
+            {
+                int maskWidth = int.Parse(MeanSizeXBox.Text);
+                int maskHeight = int.Parse(MeanSizeYBox.Text);
+                int maskOrgX = int.Parse(MeanOrgXBox.Text);
+                int maskOrgY = int.Parse(MeanOrgYBox.Text);
+                imageFilter.meanFilter(maskHeight, maskWidth, maskOrgX, maskOrgY);
+            }
+            else if (gaussian1Radio.Checked)
+            {
+                int maskSize = int.Parse(Gaussian1MaskBox.Text);
+                double sigma = double.Parse(Gaussian1SigmaBox.Text);
+                imageFilter.gaussianFilter(maskSize, sigma);
+            }
+
+            else if (gaussian2Radio.Checked)
+            {
+                double sigma = double.Parse(Gaussian2SigmaBox.Text);
+                imageFilter.gaussianFilter(sigma);
+            }
+
+            else if (laplaceRadio.Checked)
+            {
+                imageFilter.laplaceSharpen();
+            }
+
+            else if (highBoostRadio.Checked)
+            {
+                int maskSize = int.Parse(HighBoostMaskBox.Text);
+                double sigma = double.Parse(HighBoostSigmaBox.Text);
+                double k = double.Parse(HighBoostKBox.Text);
+                imageFilter.highBoost(maskSize, sigma, k);
+            }
+
+            else if (kirshRadio.Checked)
+            {
+                KirshEdgeDir dir = (KirshEdgeDir)KirshComboBox.SelectedIndex;
+                imageFilter.kirshEdgeDetection(dir);
+            }
+            else
+            {
+                return;
+            }
+            sourceBitmap = imageFilter.getImage(); // ensures cummulative ops
+            AfterBox.Image = sourceBitmap;
+        }
+
     }
 }

@@ -53,6 +53,7 @@
       <DependentUpon>GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="ImageArithmetic.cs" />
+    <Compile Include="ImageFilter.cs" />
     <Compile Include="ImageHistogram.cs" />
     <Compile Include="LockBitmap.cs" />
     <Compile Include="Program.cs" />

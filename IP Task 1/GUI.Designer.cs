@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.TabMenu = new System.Windows.Forms.TabControl();
             this.tab2 = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,6 +53,10 @@
             this.filePath = new System.Windows.Forms.TextBox();
             this.BrowseButton = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.GreenHistogramChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.BlueHistogramChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.GrayHistogramChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.RedHistogramChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.TargetButton = new System.Windows.Forms.Button();
@@ -85,21 +89,47 @@
             this.label7 = new System.Windows.Forms.Label();
             this.Img2Box = new System.Windows.Forms.TextBox();
             this.Img1Box = new System.Windows.Forms.TextBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.FilterApplyButton = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.MeanOrgYBox = new System.Windows.Forms.TextBox();
+            this.MeanOrgXBox = new System.Windows.Forms.TextBox();
+            this.MeanSizeYBox = new System.Windows.Forms.TextBox();
+            this.MeanSizeXBox = new System.Windows.Forms.TextBox();
+            this.kirshRadio = new System.Windows.Forms.RadioButton();
+            this.highBoostRadio = new System.Windows.Forms.RadioButton();
+            this.laplaceRadio = new System.Windows.Forms.RadioButton();
+            this.gaussian2Radio = new System.Windows.Forms.RadioButton();
+            this.gaussian1Radio = new System.Windows.Forms.RadioButton();
+            this.meanRadio = new System.Windows.Forms.RadioButton();
             this.AfterBox = new System.Windows.Forms.PictureBox();
-            this.RedHistogramChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.GrayHistogramChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.BlueHistogramChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.GreenHistogramChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.Gaussian1MaskBox = new System.Windows.Forms.TextBox();
+            this.Gaussian1SigmaBox = new System.Windows.Forms.TextBox();
+            this.Gaussian2SigmaBox = new System.Windows.Forms.TextBox();
+            this.HighBoostMaskBox = new System.Windows.Forms.TextBox();
+            this.HighBoostSigmaBox = new System.Windows.Forms.TextBox();
+            this.HighBoostKBox = new System.Windows.Forms.TextBox();
+            this.KirshComboBox = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.TabMenu.SuspendLayout();
             this.tab2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AfterBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RedHistogramChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GrayHistogramChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BlueHistogramChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GreenHistogramChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueHistogramChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GrayHistogramChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedHistogramChart)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AfterBox)).BeginInit();
             this.SuspendLayout();
             // 
             // TabMenu
@@ -108,6 +138,7 @@
             this.TabMenu.Controls.Add(this.tabPage1);
             this.TabMenu.Controls.Add(this.tabPage2);
             this.TabMenu.Controls.Add(this.tabPage3);
+            this.TabMenu.Controls.Add(this.tabPage4);
             this.TabMenu.Location = new System.Drawing.Point(12, 12);
             this.TabMenu.Name = "TabMenu";
             this.TabMenu.SelectedIndex = 0;
@@ -130,7 +161,7 @@
             this.tab2.Location = new System.Drawing.Point(4, 22);
             this.tab2.Name = "tab2";
             this.tab2.Padding = new System.Windows.Forms.Padding(3);
-            this.tab2.Size = new System.Drawing.Size(282, 659);
+            this.tab2.Size = new System.Drawing.Size(282, 664);
             this.tab2.TabIndex = 1;
             this.tab2.Text = "Transformations";
             this.tab2.UseVisualStyleBackColor = true;
@@ -237,7 +268,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(282, 659);
+            this.tabPage1.Size = new System.Drawing.Size(282, 664);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Open";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -290,6 +321,65 @@
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "Histogram Ops.";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // GreenHistogramChart
+            // 
+            chartArea5.Name = "ChartArea1";
+            this.GreenHistogramChart.ChartAreas.Add(chartArea5);
+            this.GreenHistogramChart.Location = new System.Drawing.Point(16, 339);
+            this.GreenHistogramChart.Margin = new System.Windows.Forms.Padding(0);
+            this.GreenHistogramChart.Name = "GreenHistogramChart";
+            this.GreenHistogramChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series5.ChartArea = "ChartArea1";
+            series5.Name = "Series1";
+            this.GreenHistogramChart.Series.Add(series5);
+            this.GreenHistogramChart.Size = new System.Drawing.Size(260, 89);
+            this.GreenHistogramChart.TabIndex = 21;
+            this.GreenHistogramChart.Text = "Green";
+            // 
+            // BlueHistogramChart
+            // 
+            chartArea6.Name = "ChartArea1";
+            this.BlueHistogramChart.ChartAreas.Add(chartArea6);
+            this.BlueHistogramChart.Location = new System.Drawing.Point(16, 428);
+            this.BlueHistogramChart.Margin = new System.Windows.Forms.Padding(0);
+            this.BlueHistogramChart.Name = "BlueHistogramChart";
+            series6.ChartArea = "ChartArea1";
+            series6.Name = "Series1";
+            this.BlueHistogramChart.Series.Add(series6);
+            this.BlueHistogramChart.Size = new System.Drawing.Size(260, 89);
+            this.BlueHistogramChart.TabIndex = 20;
+            this.BlueHistogramChart.Text = "Blue";
+            // 
+            // GrayHistogramChart
+            // 
+            chartArea7.Name = "ChartArea1";
+            this.GrayHistogramChart.ChartAreas.Add(chartArea7);
+            this.GrayHistogramChart.Location = new System.Drawing.Point(16, 533);
+            this.GrayHistogramChart.Margin = new System.Windows.Forms.Padding(0);
+            this.GrayHistogramChart.Name = "GrayHistogramChart";
+            this.GrayHistogramChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
+            series7.ChartArea = "ChartArea1";
+            series7.Name = "Series1";
+            this.GrayHistogramChart.Series.Add(series7);
+            this.GrayHistogramChart.Size = new System.Drawing.Size(260, 127);
+            this.GrayHistogramChart.TabIndex = 19;
+            this.GrayHistogramChart.Text = "Grayscale";
+            // 
+            // RedHistogramChart
+            // 
+            chartArea8.Name = "ChartArea1";
+            this.RedHistogramChart.ChartAreas.Add(chartArea8);
+            this.RedHistogramChart.Location = new System.Drawing.Point(16, 240);
+            this.RedHistogramChart.Margin = new System.Windows.Forms.Padding(0);
+            this.RedHistogramChart.Name = "RedHistogramChart";
+            this.RedHistogramChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
+            series8.ChartArea = "ChartArea1";
+            series8.Name = "Series1";
+            this.RedHistogramChart.Series.Add(series8);
+            this.RedHistogramChart.Size = new System.Drawing.Size(260, 89);
+            this.RedHistogramChart.TabIndex = 18;
+            this.RedHistogramChart.Text = "Red";
             // 
             // label10
             // 
@@ -473,7 +563,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(282, 659);
+            this.tabPage3.Size = new System.Drawing.Size(282, 664);
             this.tabPage3.TabIndex = 4;
             this.tabPage3.Text = "Arithmetic Op";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -601,6 +691,185 @@
             this.Img1Box.Size = new System.Drawing.Size(100, 20);
             this.Img1Box.TabIndex = 0;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.label20);
+            this.tabPage4.Controls.Add(this.label19);
+            this.tabPage4.Controls.Add(this.label18);
+            this.tabPage4.Controls.Add(this.label17);
+            this.tabPage4.Controls.Add(this.label16);
+            this.tabPage4.Controls.Add(this.label15);
+            this.tabPage4.Controls.Add(this.KirshComboBox);
+            this.tabPage4.Controls.Add(this.HighBoostKBox);
+            this.tabPage4.Controls.Add(this.HighBoostSigmaBox);
+            this.tabPage4.Controls.Add(this.HighBoostMaskBox);
+            this.tabPage4.Controls.Add(this.Gaussian2SigmaBox);
+            this.tabPage4.Controls.Add(this.Gaussian1SigmaBox);
+            this.tabPage4.Controls.Add(this.Gaussian1MaskBox);
+            this.tabPage4.Controls.Add(this.FilterApplyButton);
+            this.tabPage4.Controls.Add(this.label14);
+            this.tabPage4.Controls.Add(this.label13);
+            this.tabPage4.Controls.Add(this.label12);
+            this.tabPage4.Controls.Add(this.label11);
+            this.tabPage4.Controls.Add(this.MeanOrgYBox);
+            this.tabPage4.Controls.Add(this.MeanOrgXBox);
+            this.tabPage4.Controls.Add(this.MeanSizeYBox);
+            this.tabPage4.Controls.Add(this.MeanSizeXBox);
+            this.tabPage4.Controls.Add(this.kirshRadio);
+            this.tabPage4.Controls.Add(this.highBoostRadio);
+            this.tabPage4.Controls.Add(this.laplaceRadio);
+            this.tabPage4.Controls.Add(this.gaussian2Radio);
+            this.tabPage4.Controls.Add(this.gaussian1Radio);
+            this.tabPage4.Controls.Add(this.meanRadio);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(282, 664);
+            this.tabPage4.TabIndex = 5;
+            this.tabPage4.Text = "Filters";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // FilterApplyButton
+            // 
+            this.FilterApplyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FilterApplyButton.Location = new System.Drawing.Point(85, 594);
+            this.FilterApplyButton.Name = "FilterApplyButton";
+            this.FilterApplyButton.Size = new System.Drawing.Size(120, 64);
+            this.FilterApplyButton.TabIndex = 14;
+            this.FilterApplyButton.Text = "Apply";
+            this.FilterApplyButton.UseVisualStyleBackColor = true;
+            this.FilterApplyButton.Click += new System.EventHandler(this.FilterApplyButton_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(117, 138);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(73, 13);
+            this.label14.TabIndex = 13;
+            this.label14.Text = "Mask Origin Y";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(117, 112);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(73, 13);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Mask Origin X";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(117, 86);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(67, 13);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Mask Height";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(117, 60);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 13);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Mask Width";
+            // 
+            // MeanOrgYBox
+            // 
+            this.MeanOrgYBox.Location = new System.Drawing.Point(195, 135);
+            this.MeanOrgYBox.Name = "MeanOrgYBox";
+            this.MeanOrgYBox.Size = new System.Drawing.Size(52, 20);
+            this.MeanOrgYBox.TabIndex = 9;
+            // 
+            // MeanOrgXBox
+            // 
+            this.MeanOrgXBox.Location = new System.Drawing.Point(195, 109);
+            this.MeanOrgXBox.Name = "MeanOrgXBox";
+            this.MeanOrgXBox.Size = new System.Drawing.Size(52, 20);
+            this.MeanOrgXBox.TabIndex = 8;
+            // 
+            // MeanSizeYBox
+            // 
+            this.MeanSizeYBox.Location = new System.Drawing.Point(195, 83);
+            this.MeanSizeYBox.Name = "MeanSizeYBox";
+            this.MeanSizeYBox.Size = new System.Drawing.Size(52, 20);
+            this.MeanSizeYBox.TabIndex = 7;
+            // 
+            // MeanSizeXBox
+            // 
+            this.MeanSizeXBox.Location = new System.Drawing.Point(195, 57);
+            this.MeanSizeXBox.Name = "MeanSizeXBox";
+            this.MeanSizeXBox.Size = new System.Drawing.Size(52, 20);
+            this.MeanSizeXBox.TabIndex = 6;
+            // 
+            // kirshRadio
+            // 
+            this.kirshRadio.AutoSize = true;
+            this.kirshRadio.Location = new System.Drawing.Point(20, 511);
+            this.kirshRadio.Name = "kirshRadio";
+            this.kirshRadio.Size = new System.Drawing.Size(177, 17);
+            this.kirshRadio.TabIndex = 5;
+            this.kirshRadio.TabStop = true;
+            this.kirshRadio.Text = "Kirsch Compass Edge Detection";
+            this.kirshRadio.UseVisualStyleBackColor = true;
+            // 
+            // highBoostRadio
+            // 
+            this.highBoostRadio.AutoSize = true;
+            this.highBoostRadio.Location = new System.Drawing.Point(20, 378);
+            this.highBoostRadio.Name = "highBoostRadio";
+            this.highBoostRadio.Size = new System.Drawing.Size(144, 17);
+            this.highBoostRadio.TabIndex = 4;
+            this.highBoostRadio.TabStop = true;
+            this.highBoostRadio.Text = "HighBoost/Unsharp Filter";
+            this.highBoostRadio.UseVisualStyleBackColor = true;
+            // 
+            // laplaceRadio
+            // 
+            this.laplaceRadio.AutoSize = true;
+            this.laplaceRadio.Location = new System.Drawing.Point(20, 341);
+            this.laplaceRadio.Name = "laplaceRadio";
+            this.laplaceRadio.Size = new System.Drawing.Size(145, 17);
+            this.laplaceRadio.TabIndex = 3;
+            this.laplaceRadio.TabStop = true;
+            this.laplaceRadio.Text = "Laplace Sharpening Filter";
+            this.laplaceRadio.UseVisualStyleBackColor = true;
+            // 
+            // gaussian2Radio
+            // 
+            this.gaussian2Radio.AutoSize = true;
+            this.gaussian2Radio.Location = new System.Drawing.Point(20, 270);
+            this.gaussian2Radio.Name = "gaussian2Radio";
+            this.gaussian2Radio.Size = new System.Drawing.Size(143, 17);
+            this.gaussian2Radio.TabIndex = 2;
+            this.gaussian2Radio.TabStop = true;
+            this.gaussian2Radio.Text = "Gaussian Filter (Option 2)";
+            this.gaussian2Radio.UseVisualStyleBackColor = true;
+            // 
+            // gaussian1Radio
+            // 
+            this.gaussian1Radio.AutoSize = true;
+            this.gaussian1Radio.Location = new System.Drawing.Point(20, 184);
+            this.gaussian1Radio.Name = "gaussian1Radio";
+            this.gaussian1Radio.Size = new System.Drawing.Size(143, 17);
+            this.gaussian1Radio.TabIndex = 1;
+            this.gaussian1Radio.TabStop = true;
+            this.gaussian1Radio.Text = "Gaussian Filter (Option 1)";
+            this.gaussian1Radio.UseVisualStyleBackColor = true;
+            // 
+            // meanRadio
+            // 
+            this.meanRadio.AutoSize = true;
+            this.meanRadio.Location = new System.Drawing.Point(20, 38);
+            this.meanRadio.Name = "meanRadio";
+            this.meanRadio.Size = new System.Drawing.Size(77, 17);
+            this.meanRadio.TabIndex = 0;
+            this.meanRadio.TabStop = true;
+            this.meanRadio.Text = "Mean Filter";
+            this.meanRadio.UseVisualStyleBackColor = true;
+            // 
             // AfterBox
             // 
             this.AfterBox.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -612,64 +881,115 @@
             this.AfterBox.TabIndex = 2;
             this.AfterBox.TabStop = false;
             // 
-            // RedHistogramChart
+            // Gaussian1MaskBox
             // 
-            chartArea12.Name = "ChartArea1";
-            this.RedHistogramChart.ChartAreas.Add(chartArea12);
-            this.RedHistogramChart.Location = new System.Drawing.Point(16, 240);
-            this.RedHistogramChart.Margin = new System.Windows.Forms.Padding(0);
-            this.RedHistogramChart.Name = "RedHistogramChart";
-            this.RedHistogramChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series12.ChartArea = "ChartArea1";
-            series12.Name = "Series1";
-            this.RedHistogramChart.Series.Add(series12);
-            this.RedHistogramChart.Size = new System.Drawing.Size(260, 89);
-            this.RedHistogramChart.TabIndex = 18;
-            this.RedHistogramChart.Text = "Red";
+            this.Gaussian1MaskBox.Location = new System.Drawing.Point(195, 204);
+            this.Gaussian1MaskBox.Name = "Gaussian1MaskBox";
+            this.Gaussian1MaskBox.Size = new System.Drawing.Size(52, 20);
+            this.Gaussian1MaskBox.TabIndex = 15;
             // 
-            // GrayHistogramChart
+            // Gaussian1SigmaBox
             // 
-            chartArea11.Name = "ChartArea1";
-            this.GrayHistogramChart.ChartAreas.Add(chartArea11);
-            this.GrayHistogramChart.Location = new System.Drawing.Point(16, 533);
-            this.GrayHistogramChart.Margin = new System.Windows.Forms.Padding(0);
-            this.GrayHistogramChart.Name = "GrayHistogramChart";
-            this.GrayHistogramChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            series11.ChartArea = "ChartArea1";
-            series11.Name = "Series1";
-            this.GrayHistogramChart.Series.Add(series11);
-            this.GrayHistogramChart.Size = new System.Drawing.Size(260, 127);
-            this.GrayHistogramChart.TabIndex = 19;
-            this.GrayHistogramChart.Text = "Grayscale";
+            this.Gaussian1SigmaBox.Location = new System.Drawing.Point(195, 230);
+            this.Gaussian1SigmaBox.Name = "Gaussian1SigmaBox";
+            this.Gaussian1SigmaBox.Size = new System.Drawing.Size(52, 20);
+            this.Gaussian1SigmaBox.TabIndex = 16;
             // 
-            // BlueHistogramChart
+            // Gaussian2SigmaBox
             // 
-            chartArea10.Name = "ChartArea1";
-            this.BlueHistogramChart.ChartAreas.Add(chartArea10);
-            this.BlueHistogramChart.Location = new System.Drawing.Point(16, 428);
-            this.BlueHistogramChart.Margin = new System.Windows.Forms.Padding(0);
-            this.BlueHistogramChart.Name = "BlueHistogramChart";
-            series10.ChartArea = "ChartArea1";
-            series10.Name = "Series1";
-            this.BlueHistogramChart.Series.Add(series10);
-            this.BlueHistogramChart.Size = new System.Drawing.Size(260, 89);
-            this.BlueHistogramChart.TabIndex = 20;
-            this.BlueHistogramChart.Text = "Blue";
+            this.Gaussian2SigmaBox.Location = new System.Drawing.Point(195, 298);
+            this.Gaussian2SigmaBox.Name = "Gaussian2SigmaBox";
+            this.Gaussian2SigmaBox.Size = new System.Drawing.Size(52, 20);
+            this.Gaussian2SigmaBox.TabIndex = 17;
             // 
-            // GreenHistogramChart
+            // HighBoostMaskBox
             // 
-            chartArea9.Name = "ChartArea1";
-            this.GreenHistogramChart.ChartAreas.Add(chartArea9);
-            this.GreenHistogramChart.Location = new System.Drawing.Point(16, 339);
-            this.GreenHistogramChart.Margin = new System.Windows.Forms.Padding(0);
-            this.GreenHistogramChart.Name = "GreenHistogramChart";
-            this.GreenHistogramChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series9.ChartArea = "ChartArea1";
-            series9.Name = "Series1";
-            this.GreenHistogramChart.Series.Add(series9);
-            this.GreenHistogramChart.Size = new System.Drawing.Size(260, 89);
-            this.GreenHistogramChart.TabIndex = 21;
-            this.GreenHistogramChart.Text = "Green";
+            this.HighBoostMaskBox.Location = new System.Drawing.Point(195, 408);
+            this.HighBoostMaskBox.Name = "HighBoostMaskBox";
+            this.HighBoostMaskBox.Size = new System.Drawing.Size(52, 20);
+            this.HighBoostMaskBox.TabIndex = 18;
+            // 
+            // HighBoostSigmaBox
+            // 
+            this.HighBoostSigmaBox.Location = new System.Drawing.Point(195, 434);
+            this.HighBoostSigmaBox.Name = "HighBoostSigmaBox";
+            this.HighBoostSigmaBox.Size = new System.Drawing.Size(52, 20);
+            this.HighBoostSigmaBox.TabIndex = 19;
+            // 
+            // HighBoostKBox
+            // 
+            this.HighBoostKBox.Location = new System.Drawing.Point(195, 460);
+            this.HighBoostKBox.Name = "HighBoostKBox";
+            this.HighBoostKBox.Size = new System.Drawing.Size(52, 20);
+            this.HighBoostKBox.TabIndex = 20;
+            // 
+            // KirshComboBox
+            // 
+            this.KirshComboBox.FormattingEnabled = true;
+            this.KirshComboBox.Items.AddRange(new object[] {
+            "Horizontal",
+            "Vertical",
+            "Diagonal  \\",
+            "Diagonal  /"});
+            this.KirshComboBox.Location = new System.Drawing.Point(120, 534);
+            this.KirshComboBox.Name = "KirshComboBox";
+            this.KirshComboBox.Size = new System.Drawing.Size(121, 21);
+            this.KirshComboBox.TabIndex = 21;
+            this.KirshComboBox.Text = "Select Direction";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(117, 207);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(56, 13);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "Mask Size";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(117, 233);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(66, 13);
+            this.label16.TabIndex = 23;
+            this.label16.Text = "Sigma Value";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(117, 301);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(66, 13);
+            this.label17.TabIndex = 24;
+            this.label17.Text = "Sigma Value";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(117, 411);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(56, 13);
+            this.label18.TabIndex = 25;
+            this.label18.Text = "Mask Size";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(117, 437);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(66, 13);
+            this.label19.TabIndex = 26;
+            this.label19.Text = "Sigma Value";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(117, 463);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(59, 13);
+            this.label20.TabIndex = 27;
+            this.label20.Text = "K Constant";
             // 
             // GUI
             // 
@@ -687,13 +1007,15 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenHistogramChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueHistogramChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GrayHistogramChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedHistogramChart)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AfterBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RedHistogramChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GrayHistogramChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BlueHistogramChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GreenHistogramChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -754,6 +1076,35 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart GreenHistogramChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart BlueHistogramChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart GrayHistogramChart;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.RadioButton highBoostRadio;
+        private System.Windows.Forms.RadioButton laplaceRadio;
+        private System.Windows.Forms.RadioButton gaussian2Radio;
+        private System.Windows.Forms.RadioButton gaussian1Radio;
+        private System.Windows.Forms.RadioButton meanRadio;
+        private System.Windows.Forms.RadioButton kirshRadio;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox MeanOrgYBox;
+        private System.Windows.Forms.TextBox MeanOrgXBox;
+        private System.Windows.Forms.TextBox MeanSizeYBox;
+        private System.Windows.Forms.TextBox MeanSizeXBox;
+        private System.Windows.Forms.Button FilterApplyButton;
+        private System.Windows.Forms.ComboBox KirshComboBox;
+        private System.Windows.Forms.TextBox HighBoostKBox;
+        private System.Windows.Forms.TextBox HighBoostSigmaBox;
+        private System.Windows.Forms.TextBox HighBoostMaskBox;
+        private System.Windows.Forms.TextBox Gaussian2SigmaBox;
+        private System.Windows.Forms.TextBox Gaussian1SigmaBox;
+        private System.Windows.Forms.TextBox Gaussian1MaskBox;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
     }
 }
 

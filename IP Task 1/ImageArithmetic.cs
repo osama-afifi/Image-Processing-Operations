@@ -30,10 +30,10 @@ namespace ImageOperationsPackage
         public static Bitmap Add(Bitmap Img1, Bitmap Img2, double fraction)
         {
             Img2 = ResizeImage(Img2, new Size(Img1.Width, Img1.Height));
-            if (Img1.PixelFormat != System.Drawing.Imaging.PixelFormat.Format24bppRgb)
-            Img1 = toGray(Img1);
-            if (Img2.PixelFormat != System.Drawing.Imaging.PixelFormat.Format24bppRgb)
-            Img2 = toGray(Img2);
+            if (Img1.PixelFormat != System.Drawing.Imaging.PixelFormat.Format24bppRgb && Img1.PixelFormat != System.Drawing.Imaging.PixelFormat.Format32bppArgb)
+                Img1 = toGray(Img1);
+            if (Img2.PixelFormat != System.Drawing.Imaging.PixelFormat.Format24bppRgb && Img2.PixelFormat != System.Drawing.Imaging.PixelFormat.Format32bppArgb)
+                Img2 = toGray(Img2);
 
             for (int col = 0; col < Img1.Width; col++)
                 for (int row = 0; row < Img1.Height; row++)
@@ -54,7 +54,7 @@ namespace ImageOperationsPackage
             return Img1;
         }
 
-        private static Bitmap toGray(Bitmap B)
+        public static Bitmap toGray(Bitmap B)
         {
             Bitmap ret = new Bitmap(B.Width, B.Height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
             for (int col = 0; col < B.Width; col++)
@@ -70,9 +70,9 @@ namespace ImageOperationsPackage
         public static Bitmap Subtract(Bitmap Img1, Bitmap Img2)
         {
             Img2 = ResizeImage(Img2, new Size(Img1.Width, Img1.Height));
-            if (Img1.PixelFormat != System.Drawing.Imaging.PixelFormat.Format24bppRgb)
+            if (Img1.PixelFormat != System.Drawing.Imaging.PixelFormat.Format24bppRgb && Img1.PixelFormat != System.Drawing.Imaging.PixelFormat.Format32bppArgb)
             Img1 = toGray(Img1);
-            if (Img2.PixelFormat != System.Drawing.Imaging.PixelFormat.Format24bppRgb)
+            if (Img2.PixelFormat != System.Drawing.Imaging.PixelFormat.Format24bppRgb && Img2.PixelFormat != System.Drawing.Imaging.PixelFormat.Format32bppArgb)
             Img2 = toGray(Img2);
 
             int maxR = (int)(-1e9);
@@ -120,7 +120,7 @@ namespace ImageOperationsPackage
 
         public static Bitmap NotImage(Bitmap Img1)
         {
-            if(Img1.PixelFormat != System.Drawing.Imaging.PixelFormat.Format24bppRgb)
+            if (Img1.PixelFormat != System.Drawing.Imaging.PixelFormat.Format24bppRgb && Img1.PixelFormat != System.Drawing.Imaging.PixelFormat.Format32bppArgb)
                 Img1 = toGray(Img1);
 
             for (int col = 0; col < Img1.Width; col++)
@@ -137,7 +137,7 @@ namespace ImageOperationsPackage
 
         public static Bitmap BitplaneSlicing(Bitmap Img1, int bit)
         {
-            if (Img1.PixelFormat != System.Drawing.Imaging.PixelFormat.Format24bppRgb)
+            if (Img1.PixelFormat != System.Drawing.Imaging.PixelFormat.Format24bppRgb && Img1.PixelFormat != System.Drawing.Imaging.PixelFormat.Format32bppArgb)
                 Img1 = toGray(Img1);
 
             int mask = 1 << bit;
