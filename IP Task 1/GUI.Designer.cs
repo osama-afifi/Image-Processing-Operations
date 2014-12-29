@@ -50,6 +50,7 @@
             this.RotateTB = new System.Windows.Forms.TextBox();
             this.ScaleXTB = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.SaveButton = new System.Windows.Forms.Button();
             this.filePath = new System.Windows.Forms.TextBox();
             this.BrowseButton = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -90,6 +91,19 @@
             this.Img2Box = new System.Windows.Forms.TextBox();
             this.Img1Box = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.KirshComboBox = new System.Windows.Forms.ComboBox();
+            this.HighBoostKBox = new System.Windows.Forms.TextBox();
+            this.HighBoostSigmaBox = new System.Windows.Forms.TextBox();
+            this.HighBoostMaskBox = new System.Windows.Forms.TextBox();
+            this.Gaussian2SigmaBox = new System.Windows.Forms.TextBox();
+            this.Gaussian1SigmaBox = new System.Windows.Forms.TextBox();
+            this.Gaussian1MaskBox = new System.Windows.Forms.TextBox();
             this.FilterApplyButton = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -106,19 +120,8 @@
             this.gaussian1Radio = new System.Windows.Forms.RadioButton();
             this.meanRadio = new System.Windows.Forms.RadioButton();
             this.AfterBox = new System.Windows.Forms.PictureBox();
-            this.Gaussian1MaskBox = new System.Windows.Forms.TextBox();
-            this.Gaussian1SigmaBox = new System.Windows.Forms.TextBox();
-            this.Gaussian2SigmaBox = new System.Windows.Forms.TextBox();
-            this.HighBoostMaskBox = new System.Windows.Forms.TextBox();
-            this.HighBoostSigmaBox = new System.Windows.Forms.TextBox();
-            this.HighBoostKBox = new System.Windows.Forms.TextBox();
-            this.KirshComboBox = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.saveDirBox = new System.Windows.Forms.TextBox();
+            this.SaveBrowseButton = new System.Windows.Forms.Button();
             this.TabMenu.SuspendLayout();
             this.tab2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -263,6 +266,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.SaveBrowseButton);
+            this.tabPage1.Controls.Add(this.saveDirBox);
+            this.tabPage1.Controls.Add(this.SaveButton);
             this.tabPage1.Controls.Add(this.filePath);
             this.tabPage1.Controls.Add(this.BrowseButton);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -272,6 +278,16 @@
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Open";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Location = new System.Drawing.Point(7, 268);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(89, 34);
+            this.SaveButton.TabIndex = 7;
+            this.SaveButton.Text = "Save BMP";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // filePath
             // 
@@ -729,6 +745,116 @@
             this.tabPage4.Text = "Filters";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(117, 463);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(59, 13);
+            this.label20.TabIndex = 27;
+            this.label20.Text = "K Constant";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(117, 437);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(66, 13);
+            this.label19.TabIndex = 26;
+            this.label19.Text = "Sigma Value";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(117, 411);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(56, 13);
+            this.label18.TabIndex = 25;
+            this.label18.Text = "Mask Size";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(117, 301);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(66, 13);
+            this.label17.TabIndex = 24;
+            this.label17.Text = "Sigma Value";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(117, 233);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(66, 13);
+            this.label16.TabIndex = 23;
+            this.label16.Text = "Sigma Value";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(117, 207);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(56, 13);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "Mask Size";
+            // 
+            // KirshComboBox
+            // 
+            this.KirshComboBox.FormattingEnabled = true;
+            this.KirshComboBox.Items.AddRange(new object[] {
+            "Horizontal",
+            "Vertical",
+            "Diagonal  \\",
+            "Diagonal  /"});
+            this.KirshComboBox.Location = new System.Drawing.Point(120, 534);
+            this.KirshComboBox.Name = "KirshComboBox";
+            this.KirshComboBox.Size = new System.Drawing.Size(121, 21);
+            this.KirshComboBox.TabIndex = 21;
+            this.KirshComboBox.Text = "Select Direction";
+            // 
+            // HighBoostKBox
+            // 
+            this.HighBoostKBox.Location = new System.Drawing.Point(195, 460);
+            this.HighBoostKBox.Name = "HighBoostKBox";
+            this.HighBoostKBox.Size = new System.Drawing.Size(52, 20);
+            this.HighBoostKBox.TabIndex = 20;
+            // 
+            // HighBoostSigmaBox
+            // 
+            this.HighBoostSigmaBox.Location = new System.Drawing.Point(195, 434);
+            this.HighBoostSigmaBox.Name = "HighBoostSigmaBox";
+            this.HighBoostSigmaBox.Size = new System.Drawing.Size(52, 20);
+            this.HighBoostSigmaBox.TabIndex = 19;
+            // 
+            // HighBoostMaskBox
+            // 
+            this.HighBoostMaskBox.Location = new System.Drawing.Point(195, 408);
+            this.HighBoostMaskBox.Name = "HighBoostMaskBox";
+            this.HighBoostMaskBox.Size = new System.Drawing.Size(52, 20);
+            this.HighBoostMaskBox.TabIndex = 18;
+            // 
+            // Gaussian2SigmaBox
+            // 
+            this.Gaussian2SigmaBox.Location = new System.Drawing.Point(195, 298);
+            this.Gaussian2SigmaBox.Name = "Gaussian2SigmaBox";
+            this.Gaussian2SigmaBox.Size = new System.Drawing.Size(52, 20);
+            this.Gaussian2SigmaBox.TabIndex = 17;
+            // 
+            // Gaussian1SigmaBox
+            // 
+            this.Gaussian1SigmaBox.Location = new System.Drawing.Point(195, 230);
+            this.Gaussian1SigmaBox.Name = "Gaussian1SigmaBox";
+            this.Gaussian1SigmaBox.Size = new System.Drawing.Size(52, 20);
+            this.Gaussian1SigmaBox.TabIndex = 16;
+            // 
+            // Gaussian1MaskBox
+            // 
+            this.Gaussian1MaskBox.Location = new System.Drawing.Point(195, 204);
+            this.Gaussian1MaskBox.Name = "Gaussian1MaskBox";
+            this.Gaussian1MaskBox.Size = new System.Drawing.Size(52, 20);
+            this.Gaussian1MaskBox.TabIndex = 15;
+            // 
             // FilterApplyButton
             // 
             this.FilterApplyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -880,116 +1006,24 @@
             this.AfterBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.AfterBox.TabIndex = 2;
             this.AfterBox.TabStop = false;
+            this.AfterBox.Click += new System.EventHandler(this.AfterBox_Click);
             // 
-            // Gaussian1MaskBox
+            // saveDirBox
             // 
-            this.Gaussian1MaskBox.Location = new System.Drawing.Point(195, 204);
-            this.Gaussian1MaskBox.Name = "Gaussian1MaskBox";
-            this.Gaussian1MaskBox.Size = new System.Drawing.Size(52, 20);
-            this.Gaussian1MaskBox.TabIndex = 15;
+            this.saveDirBox.Location = new System.Drawing.Point(7, 242);
+            this.saveDirBox.Name = "saveDirBox";
+            this.saveDirBox.Size = new System.Drawing.Size(215, 20);
+            this.saveDirBox.TabIndex = 8;
             // 
-            // Gaussian1SigmaBox
+            // SaveBrowseButton
             // 
-            this.Gaussian1SigmaBox.Location = new System.Drawing.Point(195, 230);
-            this.Gaussian1SigmaBox.Name = "Gaussian1SigmaBox";
-            this.Gaussian1SigmaBox.Size = new System.Drawing.Size(52, 20);
-            this.Gaussian1SigmaBox.TabIndex = 16;
-            // 
-            // Gaussian2SigmaBox
-            // 
-            this.Gaussian2SigmaBox.Location = new System.Drawing.Point(195, 298);
-            this.Gaussian2SigmaBox.Name = "Gaussian2SigmaBox";
-            this.Gaussian2SigmaBox.Size = new System.Drawing.Size(52, 20);
-            this.Gaussian2SigmaBox.TabIndex = 17;
-            // 
-            // HighBoostMaskBox
-            // 
-            this.HighBoostMaskBox.Location = new System.Drawing.Point(195, 408);
-            this.HighBoostMaskBox.Name = "HighBoostMaskBox";
-            this.HighBoostMaskBox.Size = new System.Drawing.Size(52, 20);
-            this.HighBoostMaskBox.TabIndex = 18;
-            // 
-            // HighBoostSigmaBox
-            // 
-            this.HighBoostSigmaBox.Location = new System.Drawing.Point(195, 434);
-            this.HighBoostSigmaBox.Name = "HighBoostSigmaBox";
-            this.HighBoostSigmaBox.Size = new System.Drawing.Size(52, 20);
-            this.HighBoostSigmaBox.TabIndex = 19;
-            // 
-            // HighBoostKBox
-            // 
-            this.HighBoostKBox.Location = new System.Drawing.Point(195, 460);
-            this.HighBoostKBox.Name = "HighBoostKBox";
-            this.HighBoostKBox.Size = new System.Drawing.Size(52, 20);
-            this.HighBoostKBox.TabIndex = 20;
-            // 
-            // KirshComboBox
-            // 
-            this.KirshComboBox.FormattingEnabled = true;
-            this.KirshComboBox.Items.AddRange(new object[] {
-            "Horizontal",
-            "Vertical",
-            "Diagonal  \\",
-            "Diagonal  /"});
-            this.KirshComboBox.Location = new System.Drawing.Point(120, 534);
-            this.KirshComboBox.Name = "KirshComboBox";
-            this.KirshComboBox.Size = new System.Drawing.Size(121, 21);
-            this.KirshComboBox.TabIndex = 21;
-            this.KirshComboBox.Text = "Select Direction";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(117, 207);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(56, 13);
-            this.label15.TabIndex = 22;
-            this.label15.Text = "Mask Size";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(117, 233);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(66, 13);
-            this.label16.TabIndex = 23;
-            this.label16.Text = "Sigma Value";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(117, 301);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(66, 13);
-            this.label17.TabIndex = 24;
-            this.label17.Text = "Sigma Value";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(117, 411);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(56, 13);
-            this.label18.TabIndex = 25;
-            this.label18.Text = "Mask Size";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(117, 437);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(66, 13);
-            this.label19.TabIndex = 26;
-            this.label19.Text = "Sigma Value";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(117, 463);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(59, 13);
-            this.label20.TabIndex = 27;
-            this.label20.Text = "K Constant";
+            this.SaveBrowseButton.Location = new System.Drawing.Point(228, 235);
+            this.SaveBrowseButton.Name = "SaveBrowseButton";
+            this.SaveBrowseButton.Size = new System.Drawing.Size(41, 32);
+            this.SaveBrowseButton.TabIndex = 9;
+            this.SaveBrowseButton.Text = "...";
+            this.SaveBrowseButton.UseVisualStyleBackColor = true;
+            this.SaveBrowseButton.Click += new System.EventHandler(this.SaveBrowseButton_Click);
             // 
             // GUI
             // 
@@ -1105,6 +1139,9 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button SaveBrowseButton;
+        private System.Windows.Forms.TextBox saveDirBox;
     }
 }
 

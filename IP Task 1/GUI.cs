@@ -241,5 +241,25 @@ namespace IP_GUI
             AfterBox.Image = sourceBitmap;
         }
 
+        private void AfterBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            Bitmap B = new Bitmap(AfterBox.Image);
+            B.Save(saveDirBox.Text);
+        }
+
+        private void SaveBrowseButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog SF = new SaveFileDialog();
+            SF.Filter = "All Picture Files |*.bmp;|All Files (*.*)|*.*";
+            SF.Title = "Save your Image";
+            SF.ShowDialog();
+            saveDirBox.Text = SF.FileName;
+        }
+
     }
 }
